@@ -9,14 +9,14 @@ import static org.hamcrest.Matchers.equalTo;
 public class PostmanEchoTest {
 
     @Test
-    void postmanEcho(){
-            given().baseUri("https://postman-echo.com")
+    void postmanEcho() {
+        given().baseUri("https://postman-echo.com")
                 .body("test")
                 .when()
                 .post("/post")
                 .then()
                 .statusCode(200)
-                    .log().all()
+                .log().all()
                 .body("data", equalTo("test"))
         ;
     }
